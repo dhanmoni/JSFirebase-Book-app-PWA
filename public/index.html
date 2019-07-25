@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Firestore Book Keeping App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+    <!-- iOS Supprt -->
+    <link rel="apple-touch-icon" href="/icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#512DA8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="JSFBookApp">
+
+    <!-- Add additional meta tags  -->
+    <meta name="theme-color" content="#512da8" />
+    <meta name="description" content="Simple book keeping app developed with firebase.">
+
+    <!-- Firebase scripts -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
+
+</head>
+
+<body>
+    <div class="main">
+
+        <!-- Main body -->
+        <div class="header">
+            <p class="title">JS-Firebase Book App</p>
+        </div>
+        <div class="bookListContainer">
+            <ul id="bookList"></ul>
+        </div>
+        <div class="addBook">
+            <p>Add New Book</p>
+        </div>
+
+        <!-- Modal for adding new books -->
+
+        <div class="modal">
+            <div class="headerText">
+                <p>Add New Book</p>
+            </div>
+            <div class="formContainer">
+                <form id="bookForm">
+                    <label for="book">Book Name :</label>
+                    <input class="" name="book" type="text" id="book" placeholder="Book Name">
+                    <label for='author'>Author Name :</label>
+                    <input class="" name="author" type="text" id="author" placeholder="Author Name">
+                    <p id="errorMsg">Please correct your inputs!</p>
+                </form>
+
+            </div>
+            <div class="buttons">
+                <div class="cancel">Cancel</div>
+                <div class="save">Save</div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- Adding scripts -->
+    <script>
+        //Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD_R3KnXN0q6NroAGyEv8FtaHnw232ShfU",
+            authDomain: "bookkeepingapp-dc4b9.firebaseapp.com",
+            databaseURL: "https://bookkeepingapp-dc4b9.firebaseio.com",
+            projectId: "bookkeepingapp-dc4b9",
+            storageBucket: "bookkeepingapp-dc4b9.appspot.com",
+            messagingSenderId: "1054559246735",
+            appId: "1:1054559246735:web:f775bf1c9e9a45ef"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore()
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>
